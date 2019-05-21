@@ -30,6 +30,7 @@ class DataFlow(RNGDataFlow):
 class Net1DataFlow(DataFlow):
 
     def get_data(self):
+        print(self.wav_files)
         while True:
             wav_file = random.choice(self.wav_files)
             yield get_mfccs_and_phones(wav_file=wav_file)
