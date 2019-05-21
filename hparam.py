@@ -56,7 +56,7 @@ class Hparam(Dotdict):
     def set_hparam_yaml(self, case, default_file='hparams/default.yaml', user_file='hparams/hparams.yaml'):
         default_hp = load_hparam(default_file)
         user_hp = load_hparam(user_file)
-        print(user_hp)
+        print user_hp
         hp_dict = Dotdict(merge_dict(user_hp[case], default_hp) if case in user_hp else default_hp)
         for k, v in hp_dict.items():
             setattr(self, k, v)
